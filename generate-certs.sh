@@ -10,6 +10,7 @@ generate_certs() {
       --dns-nsone-credentials /nsone.ini \
       --dns-nsone-propagation-seconds 60 \
       --non-interactive \
+      --no-bootstrap \
       --agree-tos \
       --email email@drageth.com \
       -d $1
@@ -19,6 +20,7 @@ generate_certs() {
       --dns-nsone-credentials /nsone.ini \
       --dns-nsone-propagation-seconds 60 \
       --non-interactive \
+      --no-bootstrap \
       --agree-tos \
       --email email@drageth.com \
       --server https://acme-staging.api.letsencrypt.org/directory \
