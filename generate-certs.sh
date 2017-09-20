@@ -30,17 +30,17 @@ generate_certs() {
   cp -Lr /etc/letsencrypt/live/$1 /etc/letsencrypt/nginx-certs/ 
 }
 
-if [[ -f "/etc/letsencrypt/live/${SITE_HOSTNAME}/fullchain.pem" 
+if [[ -f "/etc/letsencrypt/live/${SITE_HOSTNAME}/fullchain.pem"
       && -f "/etc/letsencrypt/live/${SITE_HOSTNAME}/privkey.pem" ]]; then
   echo -e "Certs already exist for domain : ${SITE_HOSTNAME}" >> /var/log/cron.log
 else
   generate_certs ${SITE_HOSTNAME}
 fi
 
-if [[ -f "/etc/letsencrypt/live/${SOCKET_HOSTNAME}/fullchain.pem" 
-      && -f "/etc/letsencrypt/live/${SOCKET_HOSTNAME}/privkey.pem" ]]; then
-  echo -e "Certs already exist for domain : ${SOCKET_HOSTNAME}" >> /var/log/cron.log
+if [[ -f "/etc/letsencrypt/live/${API_HOSTNAME}/fullchain.pem"
+      && -f "/etc/letsencrypt/live/${API_HOSTNAME}/privkey.pem" ]]; then
+  echo -e "Certs already exist for domain : ${API_HOSTNAME}" >> /var/log/cron.log
 else
-  generate_certs ${SOCKET_HOSTNAME}
+  generate_certs ${API_HOSTNAME}
 fi
 
