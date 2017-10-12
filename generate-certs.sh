@@ -10,6 +10,7 @@ generate_certs() {
       --dns-nsone-credentials /nsone.ini \
       --dns-nsone-propagation-seconds 60 \
       --non-interactive \
+      --no-self-upgrade \
       --no-bootstrap \
       --agree-tos \
       --email email@drageth.com \
@@ -20,6 +21,7 @@ generate_certs() {
       --dns-nsone-credentials /nsone.ini \
       --dns-nsone-propagation-seconds 60 \
       --non-interactive \
+      --no-self-upgrade \
       --no-bootstrap \
       --agree-tos \
       --email email@drageth.com \
